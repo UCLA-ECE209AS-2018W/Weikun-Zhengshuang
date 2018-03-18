@@ -1,0 +1,10 @@
+Epoch is: 1, Training Loss is: 0.0053881448693573475
+Epoch is: 2, Training Loss is: 0.003702475456520915
+Epoch is: 3, Training Loss is: 0.007876252755522728
+Epoch is: 4, Training Loss is: 0.0032024055253714323
+Epoch is: 5, Training Loss is: 0.003792708506807685
+Epoch is: 6, Training Loss is: 0.0025768582709133625
+Epoch is: 7, Training Loss is: 0.0027528211940079927
+Epoch is: 8, Training Loss is: 0.004111267160624266
+Epoch is: 9, Training Loss is: 0.0030937937553972006
+Epoch is: 10, Training Loss is: 0.0032166317105293274

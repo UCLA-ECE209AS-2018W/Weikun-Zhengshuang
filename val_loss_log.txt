@@ -1,0 +1,10 @@
+Epoch is: 1, Validation Loss is:0.006687995456602602
+Epoch is: 2, Validation Loss is:0.006147773348770681
+Epoch is: 3, Validation Loss is:0.005931064941077715
+Epoch is: 4, Validation Loss is:0.005642613695402231
+Epoch is: 5, Validation Loss is:0.005352876248902508
+Epoch is: 6, Validation Loss is:0.005146023296263246
+Epoch is: 7, Validation Loss is:0.006109523010395822
+Epoch is: 8, Validation Loss is:0.009868108002202851
+Epoch is: 9, Validation Loss is:0.004479281715161744
+Epoch is: 10, Validation Loss is:0.004547126624467117
