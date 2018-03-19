@@ -3,34 +3,34 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>http://swiftline.github.io/post/first/</loc>
+    <loc>http://swiftline.github.com.io/post/first/</loc>
   </url>
   
   <url>
-    <loc>http://swiftline.github.io/post/second/</loc>
+    <loc>http://swiftline.github.com.io/post/second/</loc>
   </url>
   
   <url>
-    <loc>http://swiftline.github.io/post/third/</loc>
+    <loc>http://swiftline.github.com.io/post/third/</loc>
   </url>
   
   <url>
-    <loc>http://swiftline.github.io/categories/</loc>
+    <loc>http://swiftline.github.com.io/categories/</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://swiftline.github.io/</loc>
+    <loc>http://swiftline.github.com.io/</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://swiftline.github.io/post/</loc>
+    <loc>http://swiftline.github.com.io/post/</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://swiftline.github.io/tags/</loc>
+    <loc>http://swiftline.github.com.io/tags/</loc>
     <priority>0</priority>
   </url>
   
