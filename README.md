@@ -63,7 +63,7 @@ the attack voice in ways that cannot be easily anticipated.
 ~~[INSERT Figure here to illustrate the s-a-m channel]~~
 ![alt text](https://github.com/UCLA-ECE209AS-2018W/Weikun-Zhengshuang/raw/master/img/SAM_channel.PNG "SAM channel")
 <p align:"center">
-<img src="https://github.com/UCLA-ECE209AS-2018W/Weikun-Zhengshuang/raw/master/img/SAM_channel.PNG" align="center" width="800"/>
+<img src="https://github.com/UCLA-ECE209AS-2018W/Weikun-Zhengshuang/raw/master/img/SAM_channel.PNG" width="800"/>
 </p>
 
 #### Speaker
@@ -87,7 +87,8 @@ well on noise addition application as well.
 ~~[INSERT Figure here to illustrate the U-Net structure]~~
 ![U-Net_bio](https://github.com/UCLA-ECE209AS-2018W/Weikun-Zhengshuang/raw/master/img/U-Net_bio.PNG)
 <p align:"center">
-<img src="https://github.com/UCLA-ECE209AS-2018W/Weikun-Zhengshuang/raw/master/img/U-Net_bio.PNG" align="middle" width="600" height="400"/></p>
+<img src="https://github.com/UCLA-ECE209AS-2018W/Weikun-Zhengshuang/raw/master/img/U-Net_bio.PNG" width="600" height="400"/></p>
+
 ## Neural Network Structure
 
 
