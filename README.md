@@ -1,15 +1,12 @@
 # Over-the-Air Speech Recogniztion Attack
-======
 
 ## About This Project
-------
 The course final project for UCLA EE209AS Winter 2018 - Special Topics in Circuits and Embedded Systems: 
 Security and Privacy for Embedded Systems, Cyber-Physical Systems, and Internet of Things by Professor. Mani Srivastava.
 
 Team members: Weikun Han, Zhengshuang Ren
 
 ## Introduction
-------
 Recent progress in intelligent home assitant devices such as Google Home and Amazon Alexa
 is changing people's daily lives and allows users to interact with their home 
 devices in a smarter and more convenient. Such devices are integrated with speech recognition 
@@ -48,17 +45,16 @@ For more problem details, please go to
 [project website](https://ucla-ece209as-2018w.github.io/Weikun-Zhengshuang/).
 
 ## Background
-------
 ### Speaker-air-microphone channel
 
 ### U-Net
 
 ## Neural Network Structure
-------
+
 
 
 ## Design and Implementation
-------
+
 ### Data Preparation
 
 
