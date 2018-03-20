@@ -60,10 +60,8 @@ modifications on the adversarial examples may lead to low successful rate or eve
 files with speakers will let the voice pass through a complete speaker-air-microphone channel, where each single part will change the contents in 
 the attack voice in ways that cannot be easily anticipated. 
 
-~~[INSERT Figure here to illustrate the s-a-m channel]~~
-![alt text](https://github.com/UCLA-ECE209AS-2018W/Weikun-Zhengshuang/raw/master/img/SAM_channel.PNG "SAM channel")
 <p align:"center">
-<img src="https://github.com/UCLA-ECE209AS-2018W/Weikun-Zhengshuang/raw/master/img/SAM_channel.PNG" width="800"/>
+<img src="https://github.com/UCLA-ECE209AS-2018W/Weikun-Zhengshuang/raw/master/img/SAM_channel.PNG" width="600"/>
 </p>
 
 #### Speaker
@@ -84,10 +82,9 @@ and validation loss in biomedical image processing applications of artifacts and
 applications. In [4], it is used also for audio dataset in audio super-resolution/noise removal application. We expect it to work 
 well on noise addition application as well. 
 
-~~[INSERT Figure here to illustrate the U-Net structure]~~
-![U-Net_bio](https://github.com/UCLA-ECE209AS-2018W/Weikun-Zhengshuang/raw/master/img/U-Net_bio.PNG)
 <p align:"center">
-<img src="https://github.com/UCLA-ECE209AS-2018W/Weikun-Zhengshuang/raw/master/img/U-Net_bio.PNG" width="600" height="400"/></p>
+<img src="https://github.com/UCLA-ECE209AS-2018W/Weikun-Zhengshuang/raw/master/img/U-Net_bio.PNG" width="600" />
+</p>
 
 ## Neural Network Structure
 
