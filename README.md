@@ -34,6 +34,7 @@ since they are operating users' private home devices and transimitting sensitive
 private personal lives. Vulnerabilities of these devices may be exploited and used to cause users' property loss. 
 
 ### Problem Statement
+------
 Recent research has shown that deep learning models are easy to be fooled by attackers to perform untargeted or 
 even targeted attacks by generating adversarial exampes to produce wrong recognized commands and to actuate users' 
 home devices in unwanted ways. Moustafa Alzantot[1] and Nicholas Carlini[2] have demonstrated the vulnerabilities 
@@ -60,6 +61,7 @@ files with speakers will let the voice pass through a complete speaker-air-micro
 the attack voice in ways that cannot be easily anticipated. 
 
 ~~[INSERT Figure here to illustrate the s-a-m channel]~~
+![alt text](https://github.com/UCLA-ECE209AS-2018W/Weikun-Zhengshuang/tree/master/img/SAM_channel.PNG "SAM channel")
 #### Speaker
 The amplifiers in the speaker circuits will shift the DC offset and amplify the audio singals and the analog components will add noise to the 
 audio signals. Both will contribute to the changes in adversarial examples after they are played. 
@@ -79,7 +81,7 @@ applications. In [4], it is used also for audio dataset in audio super-resolutio
 well on noise addition application as well. 
 
 ~~[INSERT Figure here to illustrate the U-Net structure]~~
-
+![alt text](https://github.com/UCLA-ECE209AS-2018W/Weikun-Zhengshuang/tree/master/img/U-Net_bio.PNG "U-Net")
 ## Neural Network Structure
 
 
@@ -87,7 +89,7 @@ well on noise addition application as well.
 
 
 ~~[INSERT Figure here to illustrate the OUR U-Net structure]~~
-
+![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Our U-Net")
 
 ## Design and Implementation
 
@@ -96,8 +98,8 @@ well on noise addition application as well.
 #### Experiments Setup
 
 #### Data Processing
-process .wav file with librosa
-trim and splice
+process .wav file with librosa 
+trim and splice 
 train/valid/test separation
 
 ### Network training and testing
@@ -130,9 +132,9 @@ train/valid/test separation
 
 ## References
 ------
-[1] Moustafa Alzantot: https://arxiv.org/pdf/1801.00554.pdf
-[2] Nicholas Carlini: https://arxiv.org/pdf/1801.01944.pdf
-[3] Biomedical U-Net: https://arxiv.org/abs/1505.04597
-[4] Audio SR U-Net: https://blog.insightdatascience.com/using-deep-learning-to-reconstruct-high-resolution-audio-29deee8b7ccd
-[5] Subpixel convolutions: https://arxiv.org/abs/1609.05158
+[1] Moustafa Alzantot: https://arxiv.org/pdf/1801.00554.pdf 
+[2] Nicholas Carlini: https://arxiv.org/pdf/1801.01944.pdf 
+[3] Biomedical U-Net: https://arxiv.org/abs/1505.04597 
+[4] Audio SR U-Net: https://blog.insightdatascience.com/using-deep-learning-to-reconstruct-high-resolution-audio-29deee8b7ccd 
+[5] Subpixel convolutions: https://arxiv.org/abs/1609.05158 
 [6] EnglishSpeechUpsampler GitHub Repo: https://github.com/jhetherly/EnglishSpeechUpsampler
