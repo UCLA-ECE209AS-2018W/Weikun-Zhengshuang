@@ -6,9 +6,9 @@
 The course final project for UCLA EE209AS Winter 2018 - Special Topics in Circuits and Embedded Systems: 
 Security and Privacy for Embedded Systems, Cyber-Physical Systems, and Internet of Things by Professor. Mani Srivastava.
 
-**Team members**: Weikun Han, Zhengshuang Ren
-**Link to project website**: [project website](https://ucla-ece209as-2018w.github.io/Weikun-Zhengshuang/).
-Please refer to **/documentation** folder for **proposal** and **midterm report**.
+* **Team members**: Weikun Han, Zhengshuang Ren 
+* **Link to project website**: [project website](https://ucla-ece209as-2018w.github.io/Weikun-Zhengshuang/).
+* Please refer to **/documentation** folder for **proposal** and **midterm report**.
 
 ### Requirements and Dependencies
 ------
@@ -61,7 +61,7 @@ files with speakers will let the voice pass through a complete speaker-air-micro
 the attack voice in ways that cannot be easily anticipated. 
 
 ~~[INSERT Figure here to illustrate the s-a-m channel]~~
-![alt text](https://github.com/UCLA-ECE209AS-2018W/Weikun-Zhengshuang/tree/master/img/SAM_channel.PNG "SAM channel")
+![alt text](https://github.com/UCLA-ECE209AS-2018W/Weikun-Zhengshuang/raw/master/img/SAM_channel.PNG "SAM channel")
 #### Speaker
 The amplifiers in the speaker circuits will shift the DC offset and amplify the audio singals and the analog components will add noise to the 
 audio signals. Both will contribute to the changes in adversarial examples after they are played. 
@@ -81,7 +81,7 @@ applications. In [4], it is used also for audio dataset in audio super-resolutio
 well on noise addition application as well. 
 
 ~~[INSERT Figure here to illustrate the U-Net structure]~~
-![alt text](https://github.com/UCLA-ECE209AS-2018W/Weikun-Zhengshuang/tree/master/img/U-Net_bio.PNG "U-Net")
+![alt text](https://github.com/UCLA-ECE209AS-2018W/Weikun-Zhengshuang/raw/master/img/U-Net_bio.PNG "U-Net")
 ## Neural Network Structure
 
 
@@ -132,9 +132,9 @@ train/valid/test separation
 
 ## References
 ------
-[1] Moustafa Alzantot: https://arxiv.org/pdf/1801.00554.pdf 
-[2] Nicholas Carlini: https://arxiv.org/pdf/1801.01944.pdf 
-[3] Biomedical U-Net: https://arxiv.org/abs/1505.04597 
-[4] Audio SR U-Net: https://blog.insightdatascience.com/using-deep-learning-to-reconstruct-high-resolution-audio-29deee8b7ccd 
-[5] Subpixel convolutions: https://arxiv.org/abs/1609.05158 
-[6] EnglishSpeechUpsampler GitHub Repo: https://github.com/jhetherly/EnglishSpeechUpsampler
+[1] Moustafa Alzantot: https://arxiv.org/pdf/1801.00554.pdf  
+[2] Nicholas Carlini: https://arxiv.org/pdf/1801.01944.pdf  
+[3] Biomedical U-Net: https://arxiv.org/abs/1505.04597  
+[4] Audio SR U-Net: https://blog.insightdatascience.com/using-deep-learning-to-reconstruct-high-resolution-audio-29deee8b7ccd  
+[5] Subpixel convolutions: https://arxiv.org/abs/1609.05158  
+[6] EnglishSpeechUpsampler GitHub Repo: https://github.com/jhetherly/EnglishSpeechUpsampler  
