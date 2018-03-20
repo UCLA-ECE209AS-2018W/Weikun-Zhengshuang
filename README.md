@@ -62,6 +62,8 @@ the attack voice in ways that cannot be easily anticipated.
 
 ~~[INSERT Figure here to illustrate the s-a-m channel]~~
 ![alt text](https://github.com/UCLA-ECE209AS-2018W/Weikun-Zhengshuang/raw/master/img/SAM_channel.PNG "SAM channel")
+<img src="https://github.com/UCLA-ECE209AS-2018W/Weikun-Zhengshuang/raw/master/img/SAM_channel.PNG" align="middle" width="300">
+
 #### Speaker
 The amplifiers in the speaker circuits will shift the DC offset and amplify the audio singals and the analog components will add noise to the 
 audio signals. Both will contribute to the changes in adversarial examples after they are played. 
@@ -81,7 +83,8 @@ applications. In [4], it is used also for audio dataset in audio super-resolutio
 well on noise addition application as well. 
 
 ~~[INSERT Figure here to illustrate the U-Net structure]~~
-![alt text](https://github.com/UCLA-ECE209AS-2018W/Weikun-Zhengshuang/raw/master/img/U-Net_bio.PNG "U-Net")
+![U-Net_bio](https://github.com/UCLA-ECE209AS-2018W/Weikun-Zhengshuang/raw/master/img/U-Net_bio.PNG)
+<img src="https://github.com/UCLA-ECE209AS-2018W/Weikun-Zhengshuang/raw/master/img/U-Net_bio.PNG" align="middle" width="300" height="200">
 ## Neural Network Structure
 
 
