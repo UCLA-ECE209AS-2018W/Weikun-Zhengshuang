@@ -175,9 +175,9 @@ def next_batch(batch_size, filename_pairs, mono=True):
 
         # Check seletion is out of bound
         if end_index >= seleted_size:
-            chosen_pairs = filename_pairs[i :]
+            chosen_pairs = filename_pairs[i:]
         else:
-            chosen_pairs = filename_pairs[i : end_index]
+            chosen_pairs = filename_pairs[i:end_index]
 
         for n in chosen_pairs:
             original_waveform, noise_waveform = waveforms(n,
