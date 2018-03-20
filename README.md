@@ -1,10 +1,27 @@
 # Over-the-Air Speech Recogniztion Attack
 
 ## About This Project
+### Overview
+------
 The course final project for UCLA EE209AS Winter 2018 - Special Topics in Circuits and Embedded Systems: 
 Security and Privacy for Embedded Systems, Cyber-Physical Systems, and Internet of Things by Professor. Mani Srivastava.
 
-Team members: Weikun Han, Zhengshuang Ren
+**Team members**: Weikun Han, Zhengshuang Ren
+**Link to project website**: [project website](https://ucla-ece209as-2018w.github.io/Weikun-Zhengshuang/).
+Please refer to **/documentation** folder for **proposal** and **midterm report**.
+
+### Requirements and Dependencies
+------
+The following packages are required (the version numbers that have been tested 
+are given for reference):
+
+* Python 2.7 or 3.6
+* Tensorflow 1.0.1
+* Numpy 1.12.1
+* Librosa 0.5.0
+* tqdm 4.11.2 (only for preprocessing datasets)
+* Sox 1.2.7 (only for preprocessing datasets)
+
 
 ## Introduction
 Recent progress in intelligent home assitant devices such as Google Home and Amazon Alexa
@@ -16,7 +33,7 @@ correctly than traditional machine learning algorithms. However, such devices br
 since they are operating users' private home devices and transimitting sensitive data and information about users'
 private personal lives. Vulnerabilities of these devices may be exploited and used to cause users' property loss. 
 
-
+### Problem Statement
 Recent research has shown that deep learning models are easy to be fooled by attackers to perform untargeted or 
 even targeted attacks by generating adversarial exampes to produce wrong recognized commands and to actuate users' 
 home devices in unwanted ways. Moustafa Alzantot[1] and Nicholas Carlini[2] have demonstrated the vulnerabilities 
@@ -33,29 +50,61 @@ will result in the ones in [1],[2] after passing through the speaker-air-microph
 neural network to mimic the speaker-air-microphone channel to provide high accuracy and avoid the complicated analysis of 
 speaker/microphone circuits and the acoustic air channel.
 
-
-The project uses deep neural networks (U-Net) to build a deep learning model 
-that remove electronic noise and air noise to transmit adversarial examples 
-over-the-air. Our contribution is to make the adversarial example attack to be 
-a practical attack. In the further, this deep neural networks (U-Net) can also 
-use to defense adversarial learning attack as well due to its strong noise 
-remove ability.
-
-For more problem details, please go to
-[project website](https://ucla-ece209as-2018w.github.io/Weikun-Zhengshuang/).
-
 ## Background
 ### Speaker-air-microphone channel
+------
+Since we already have some high successful rate adversarial examples, why can't we perform the attack simply by playing them through speakers?
+The answer is because the adversarial examples are carefully designed to achieve targeted attacks by manipulating bits in the audio files. Minor 
+modifications on the adversarial examples may lead to low successful rate or even failure of the attacks. Playing the adversarial example audio 
+files with speakers will let the voice pass through a complete speaker-air-microphone channel, where each single part will change the contents in 
+the attack voice in ways that cannot be easily anticipated. 
+
+~~[INSERT Figure here to illustrate the s-a-m channel]~~
+#### Speaker
+The amplifiers in the speaker circuits will shift the DC offset and amplify the audio singals and the analog components will add noise to the 
+audio signals. Both will contribute to the changes in adversarial examples after they are played. 
+#### Air channel
+The environmental surrounding noise and air vibration will further add changes to the adversarial examples.
+#### Microphone
+Components in microphone circuits such as ADC and DSP filters will greatly modify the adersarial examples as well. 
 
 ### U-Net
+------
+U-Net[3] is a noval deep learning neural network structure that firstly be introduced for biomedical images processing.
+The structure consists of several levels of residual blocks for downsamling and upsampling. Minimal features extraction 
+is done through the downsampling path and background noise is added/removed through upsampling reconstruction. The residual 
+blocks are served for a fine-turning purpose during reconstruction. This network structure is proved to provide high accuracy 
+and validation loss in biomedical image processing applications of artifacts and background noise removal and super-resolution 
+applications. In [4], it is used also for audio dataset in audio super-resolution/noise removal application. We expect it to work 
+well on noise addition application as well. 
+
+~~[INSERT Figure here to illustrate the U-Net structure]~~
 
 ## Neural Network Structure
 
 
 
+
+
+~~[INSERT Figure here to illustrate the OUR U-Net structure]~~
+
+
 ## Design and Implementation
 
 ### Data Preparation
+------
+#### Experiments Setup
+
+#### Data Processing
+process .wav file with librosa
+trim and splice
+train/valid/test separation
+
+### Network training and testing
+------
+
+
+
 
 
 
@@ -77,17 +126,13 @@ For more problem details, please go to
 
 
 
-## Requirements and Dependencies
-------
-The following packages are required (the version numbers that have been tested 
-are given for reference):
 
-* Python 2.7 or 3.6
-* Tensorflow 1.0.1
-* Numpy 1.12.1
-* Librosa 0.5.0
-* tqdm 4.11.2 (only for preprocessing datasets)
-* Sox 1.2.7 (only for preprocessing datasets)
 
 ## References
 ------
+[1] Moustafa Alzantot: https://arxiv.org/pdf/1801.00554.pdf
+[2] Nicholas Carlini: https://arxiv.org/pdf/1801.01944.pdf
+[3] Biomedical U-Net: https://arxiv.org/abs/1505.04597
+[4] Audio SR U-Net: https://blog.insightdatascience.com/using-deep-learning-to-reconstruct-high-resolution-audio-29deee8b7ccd
+[5] Subpixel convolutions: https://arxiv.org/abs/1609.05158
+[6] EnglishSpeechUpsampler GitHub Repo: https://github.com/jhetherly/EnglishSpeechUpsampler
