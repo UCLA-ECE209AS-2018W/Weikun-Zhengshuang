@@ -43,16 +43,17 @@ rates. Notice in [1], the author is performing black-box attacks without knowing
 neural network whereas in [2], the attack is performed in white-box attacks leveraging the sturcture and details about the network.
 However, they achieved the research-purpose attacks by deploying adversarial example files into the home assistant 
 devices, but in practical attacks, over-the-air attacks are more realistic to perform since the attackers may not have physical 
-access to the devices. In this project, we proposed a way to generate the adversarial examples before the air channel so that 
-the attackers are able to perform over-the-air attacks based on the adversarial examples they have from [1] or [2]. The main idea 
-of our project is to mimic the air channel characteristics, the characteristics of the speaker used to play the adversarial 
-examples and the microphone on the home assistant devices in order to predict and construct the original adversarial examples which 
-will result in the ones in [1],[2] after passing through the speaker-air-microphone channel. We leveraged the power of deep learning 
-neural network to mimic the speaker-air-microphone channel to provide high accuracy and avoid the complicated analysis of 
-speaker/microphone circuits and the acoustic air channel.
+access to the devices.  
+
+### Objective
+------
+In this project, we proposed a way to generate the adversarial examples before the air channel so that 
+the attackers are able to perform over-the-air attacks based on the adversarial examples they have from [1] or [2]. 
+The main idea of our project is to mimic the air channel characteristics, the characteristics of the speaker used to play the adversarial 
+examples and the microphone on the home assistant devices listening to the commands in order to predict and construct the original adversarial examples which will result in the ones in [1],[2] after passing through the speaker-air-microphone channel. We leveraged the power of deep learning neural network to mimic the speaker-air-microphone channel to provide high accuracy and avoid the complicated analysis of speaker/microphone circuits and the acoustic air channel.
 
 ## Background
-### Speaker-air-microphone channel
+### Speaker-Air-Microphone channel
 ------
 Since we already have some high successful rate adversarial examples, why can't we perform the attack simply by playing them through speakers?
 The answer is because the adversarial examples are carefully designed to achieve targeted attacks by manipulating bits in the audio files. Minor 
@@ -74,7 +75,7 @@ Components in microphone circuits such as ADC and DSP filters will greatly modif
 
 ### U-Net
 ------
-U-Net[3] is a noval deep learning neural network structure that firstly be introduced for biomedical images processing.
+U-Net[3] is a noval deep learning neural network structure that firstly was introduced for biomedical images processing.
 The structure consists of several levels of residual blocks for downsamling and upsampling. Minimal features extraction 
 is done through the downsampling path and background noise is added/removed through upsampling reconstruction. The residual 
 blocks are served for a fine-turning purpose during reconstruction. This network structure is proved to provide high accuracy 
@@ -98,7 +99,7 @@ well on noise addition application as well.
 ### Data Preparation
 ------
 #### Experiments Setup
-
+<img src="https://github.com/UCLA-ECE209AS-2018W/Weikun-Zhengshuang/raw/master/img/experiment_setup.PNG" aligen="center" width="600" />
 #### Data Processing
 process .wav file with librosa 
 trim and splice 
@@ -133,7 +134,6 @@ train/valid/test separation
 
 
 ## References
-------
 [1] Moustafa Alzantot: https://arxiv.org/pdf/1801.00554.pdf  
 [2] Nicholas Carlini: https://arxiv.org/pdf/1801.01944.pdf  
 [3] Biomedical U-Net: https://arxiv.org/abs/1505.04597  
