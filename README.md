@@ -99,7 +99,7 @@ well on noise addition application as well.
 ### Data Preparation
 ------
 #### Experiments Setup
-<img src="https://github.com/UCLA-ECE209AS-2018W/Weikun-Zhengshuang/raw/master/img/experiment_setup.PNG" aligen="center" width="600" />
+<img src="https://github.com/UCLA-ECE209AS-2018W/Weikun-Zhengshuang/raw/master/img/experiment_setup.JPG" aligen="center" width="600" />
 #### Data Processing
 process .wav file with librosa 
 trim and splice 
