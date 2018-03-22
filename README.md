@@ -121,11 +121,19 @@ experiment is:
 
 <img src="https://github.com/UCLA-ECE209AS-2018W/Weikun-Zhengshuang/raw/master/img/record_setup.png" aligen="center" width="600" />
 
-
 #### Data Processing
-process .wav file with librosa 
-trim and splice 
-train/valid/test separation
+After recording the noise sample, you also need the use professor audio editor to remove the audio offset. Here, we use Audacity to do it. The audio most off before removing is showed as the blow.
+
+<img src="https://github.com/UCLA-ECE209AS-2018W/Weikun-Zhengshuang/raw/master/img/processing_recorded_audio_1.png" aligen="center" width="600" />
+
+Here, you need to make sure noise sample and original sample have the same offset, which can check easily as the figure below.
+
+<img src="https://github.com/UCLA-ECE209AS-2018W/Weikun-Zhengshuang/raw/master/img/processing_recorded_audio_2.png" aligen="center" width="600" />
+
+Finally, you need remove have offset of last part of noise sample. The way to remove it very easy, it showed as blow figure.
+Here, you have successfully got noise sample. 
+
+<img src="https://github.com/UCLA-ECE209AS-2018W/Weikun-Zhengshuang/raw/master/img/processing_recorded_audio_3.png" aligen="center" width="600" />
 
 ### Network training and testing
 ------
