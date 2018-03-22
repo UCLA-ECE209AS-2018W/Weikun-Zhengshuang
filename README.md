@@ -119,8 +119,7 @@ experiment is:
 
 <img src="https://github.com/UCLA-ECE209AS-2018W/Weikun-Zhengshuang/raw/master/img/experiment_setup.JPG" aligen="center" width="600" />
 
-<img src="https://github.com/UCLA-ECE209AS-2018W/Weikun-Zhengshuang/raw/master/img/record_setup.JPG" aligen="center" width="600" />
-<img src="https://github.com/UCLA-ECE209AS-2018W/Weikun-Zhengshuang/raw/master/img/record_setup.JPG" aligen="center" width="600" />
+<img src="https://github.com/UCLA-ECE209AS-2018W/Weikun-Zhengshuang/raw/master/img/record_setup.png" aligen="center" width="600" />
 
 
 #### Data Processing
