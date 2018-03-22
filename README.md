@@ -4,7 +4,11 @@
 ### Overview
 ------
 The course final project for UCLA EE209AS Winter 2018 - Special Topics in Circuits and Embedded Systems: 
-Security and Privacy for Embedded Systems, Cyber-Physical Systems, and Internet of Things by Professor. Mani Srivastava.
+Security and Privacy for Embedded Systems, Cyber-Physical Systems, and the Internet of Things by Professor. Mani Srivastava.
+The main contribution of this project:
+
+* uses deep learning (audio U-Net) to build model remove electronic noise and air noise during adversarial example transmission over the air. Our contribution is to make the adversarial example attack to be a practical attack.
+* found audio U-Net is also a possible defense for adversarial learning attack due to strong ability to remove noise
 
 * **Team members**: Weikun Han, Zhengshuang Ren 
 * **Link to project website**: [project website](https://ucla-ece209as-2018w.github.io/Weikun-Zhengshuang/).
@@ -98,13 +102,6 @@ noise addition application as well.
 
 <img src="https://github.com/UCLA-ECE209AS-2018W/Weikun-Zhengshuang/raw/master/img/audio_u_net.png" aligen="center" width="600" />
 
-
-
-
-
-
-~~[INSERT Figure here to illustrate the OUR U-Net structure]~~
-![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Our U-Net")
 
 ## Design and Implementation
 
