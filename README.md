@@ -5,7 +5,7 @@
 ------
 The course final project for UCLA EE209AS Winter 2018 - Special Topics in Circuits and Embedded Systems: 
 Security and Privacy for Embedded Systems, Cyber-Physical Systems, and the Internet of Things by Professor. Mani Srivastava.
-In this project, we use deep learning (audio U-Net) to build model remove electronic noise and air noise during adversarial example transmission over the air. The contribution of this project is:
+In this project, we use deep learning (audio U-Net) to build model remove electronic noise and air noise during adversarial example transmission over the air. The contribution of this project are:
 * make the adversarial example attack can transmit over-the-air, which eventually be a practical attack.
 * found audio U-Net is also a possible defense for adversarial example attack due to strong ability to remove noise
 
