@@ -106,8 +106,8 @@ noise addition application as well.
 ------
 The datasets we use for this project is TED-LIUM Corpus[8]. First, since is datasets is very large, you need down it and run 
 preprocessing_audio.ipynb to extract audio into .wav format. Next, you can generate difference noise sample to train the 
-audio U-Net. The way we generate noise sample is showed in experiments setup. You free to design noise sample base on the 
-different project. We provide some example noise on [GitHub](https://github.com/UCLA-ECE209AS-2018W/Weikun-Zhengshuang/tree/master/datasets), but we cannot upload full datasets due to the limitation of upload size. 
+audio U-Net. The way we generate noise sample is showed in experiments setup and data processing. You free to design noise 
+sample base on the different project purpose. We provide some example noise on [GitHub](https://github.com/UCLA-ECE209AS-2018W/Weikun-Zhengshuang/tree/master/datasets), but we cannot upload full datasets due to the limitation of upload size. 
 
 #### Experiments Setup
 The blow figure shows the environment of noise sample generation. To  generate noise is the sample, out settings of this 
@@ -131,9 +131,11 @@ Here, you need to make sure noise sample and original sample have the same offse
 <img src="https://github.com/UCLA-ECE209AS-2018W/Weikun-Zhengshuang/raw/master/img/processing_recorded_audio_2.png" aligen="center" width="600" />
 
 Finally, you need remove have offset of last part of noise sample. The way to remove it very easy, it showed as blow figure.
-Here, you have successfully got noise sample. 
+Here, you have successfully got noise sample. Remember save same audio format as the orignal audio's format.
 
 <img src="https://github.com/UCLA-ECE209AS-2018W/Weikun-Zhengshuang/raw/master/img/processing_recorded_audio_3.png" aligen="center" width="600" />
+
+<img src="https://github.com/UCLA-ECE209AS-2018W/Weikun-Zhengshuang/raw/master/img/processing_recorded_audio_4.png" aligen="center" width="600" />
 
 ### Network training and testing
 ------
