@@ -103,11 +103,10 @@ noise addition application as well.
 
 <img src="https://github.com/UCLA-ECE209AS-2018W/Weikun-Zhengshuang/raw/master/img/audio_u_net.png" aligen="center" width="600" />
 
-
 ## Design and Implementation
-
 ### Data Preparation
 ------
+The datasets we use for this project is 
 #### Experiments Setup
 <img src="https://github.com/UCLA-ECE209AS-2018W/Weikun-Zhengshuang/raw/master/img/experiment_setup.JPG" aligen="center" width="600" />
 #### Data Processing
