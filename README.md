@@ -57,13 +57,9 @@ examples and the microphone on the home assistant devices listening to the comma
 ------
 Since we already have some high successful rate adversarial examples, why can't we perform the attack simply by playing them through speakers?
 The answer is because the adversarial examples are carefully designed to achieve targeted attacks by manipulating bits in the audio files. Minor 
-modifications on the adversarial examples may lead to low successful rate or even failure of the attacks. Playing the adversarial example audio 
-files with speakers will let the voice pass through a complete speaker-air-microphone channel, where each single part will change the contents in 
-the attack voice in ways that cannot be easily anticipated. 
-
+modifications on the adversarial examples may lead to low successful rate or even failure of the attacks. Playing the adversarial example audio files with speakers will let the voice pass through a complete speaker-air-microphone channel, where each single part will change the contents in the attack voice in ways that cannot be easily anticipated. 
 
 <img src="https://github.com/UCLA-ECE209AS-2018W/Weikun-Zhengshuang/raw/master/img/SAM_channel.PNG" aligen="center" width="600"/>
-
 
 #### Speaker
 The amplifiers in the speaker circuits will shift the DC offset and amplify the audio singals and the analog components will add noise to the 
@@ -84,6 +80,10 @@ applications. In [4], it is used also for audio dataset in audio super-resolutio
 well on noise addition application as well. 
 
 <img src="https://github.com/UCLA-ECE209AS-2018W/Weikun-Zhengshuang/raw/master/img/U-Net_bio.PNG" aligen="center" width="600" />
+
+### Audio U-Net
+------
+Recently, the U-Net deep neural networks have been apply to enhance the quality audio signal[7]. This deep neural networks based on the U-Net can 
 
 ## Neural Network Structure
 
