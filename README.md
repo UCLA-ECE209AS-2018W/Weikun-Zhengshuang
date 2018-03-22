@@ -19,14 +19,12 @@ In this project, we use deep learning (audio U-Net) to build model remove electr
 ------
 The following packages are required (the version numbers that have been tested 
 are given for reference):
-
 * Python 2.7 or 3.6
 * Tensorflow 1.0.1
 * Numpy 1.12.1
 * Librosa 0.5.0
 * tqdm 4.11.2 (only for preprocessing datasets)
 * Sox 1.2.7 (only for preprocessing datasets)
-
 
 ## Introduction
 Recent progress in intelligent home assitant devices such as Google Home and Amazon Alexa
@@ -112,7 +110,18 @@ audio U-Net. The way we generate noise sample is showed in experiments setup. Yo
 different project. We provide some example noise on [GitHub](https://github.com/UCLA-ECE209AS-2018W/Weikun-Zhengshuang/tree/master/datasets), but we cannot upload full datasets due to the limitation of upload size. 
 
 #### Experiments Setup
+The blow figure shows the environment of noise sample generation. To  generate noise is the sample, out settings of this 
+experiment is:
+* software media player: Groove Music (Window 10), volume setting 4/100
+* speaker: SoundLink Mini II (Bose), volume setting 100/100
+* recorder: Snowball (Blue), default
+* software media recorder: Arecord (Ubuntu 17.10), setting as blow figure
+
 <img src="https://github.com/UCLA-ECE209AS-2018W/Weikun-Zhengshuang/raw/master/img/experiment_setup.JPG" aligen="center" width="600" />
+
+<img src="https://github.com/UCLA-ECE209AS-2018W/Weikun-Zhengshuang/raw/master/img/record_setup.JPG" aligen="center" width="600" />
+
+
 #### Data Processing
 process .wav file with librosa 
 trim and splice 
