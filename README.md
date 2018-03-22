@@ -124,18 +124,18 @@ experiment is:
 #### Data Processing
 After recording the noise sample, you also need the use professor audio editor to remove the audio offset. Here, we use Audacity to do it. The audio most off before removing is showed as the blow.
 
-<img src="https://github.com/UCLA-ECE209AS-2018W/Weikun-Zhengshuang/raw/master/img/processing_recorded_audio_1.png" aligen="center" width="600" />
+<img src="https://github.com/UCLA-ECE209AS-2018W/Weikun-Zhengshuang/raw/master/img/processing_recorded_audio_1.PNG" aligen="center" width="600" />
 
 Here, you need to make sure noise sample and original sample have the same offset, which can check easily as the figure below.
 
-<img src="https://github.com/UCLA-ECE209AS-2018W/Weikun-Zhengshuang/raw/master/img/processing_recorded_audio_2.png" aligen="center" width="600" />
+<img src="https://github.com/UCLA-ECE209AS-2018W/Weikun-Zhengshuang/raw/master/img/processing_recorded_audio_2.PNG" aligen="center" width="600" />
 
 Finally, you need remove have offset of last part of noise sample. The way to remove it very easy, it showed as blow figure.
 Here, you have successfully got noise sample. Remember save same audio format as the orignal audio's format.
 
-<img src="https://github.com/UCLA-ECE209AS-2018W/Weikun-Zhengshuang/raw/master/img/processing_recorded_audio_3.png" aligen="center" width="600" />
+<img src="https://github.com/UCLA-ECE209AS-2018W/Weikun-Zhengshuang/raw/master/img/processing_recorded_audio_3.PNG" aligen="center" width="600" />
 
-<img src="https://github.com/UCLA-ECE209AS-2018W/Weikun-Zhengshuang/raw/master/img/processing_recorded_audio_4.png" aligen="center" width="600" />
+<img src="https://github.com/UCLA-ECE209AS-2018W/Weikun-Zhengshuang/raw/master/img/processing_recorded_audio_4.PNG" aligen="center" width="600" />
 
 ### Network training and testing
 ------
