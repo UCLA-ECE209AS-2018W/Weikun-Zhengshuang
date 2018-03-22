@@ -173,5 +173,6 @@ Here, you have successfully got noise sample. Remember save same audio format as
 [5] Wenzhe Shi, Real-Time Single Image and Video Super-Resolution Using an Efficient Sub-Pixel Convolutional Neural Network: https://arxiv.org/abs/1609.05158  
 [6] EnglishSpeechUpsampler GitHub Repo: https://github.com/jhetherly/EnglishSpeechUpsampler  
 [7] Volodymyr Kuleshov, Audio Super Resolution using Neural Networks, https://arxiv.org/pdf/1708.00853.pdf
+
 [8] TED-LIUM Corpus, http://www-lium.univ-lemans.fr/en/content/ted-lium-corpus
 
