@@ -96,7 +96,7 @@ telephony, compression, and text-to-speech generation and suggests new architect
 it is used also for the audio dataset in audio super-resolution/noise removal application. We expect it to work well on 
 noise addition application as well. 
 
-<img src="https://github.com/UCLA-ECE209AS-2018W/Weikun-Zhengshuang/raw/master/img/audio_u_net.PNG" aligen="center" width="600" />
+<img src="https://github.com/UCLA-ECE209AS-2018W/Weikun-Zhengshuang/raw/master/img/audio_u_net.png" aligen="center" width="600" />
 
 
 
