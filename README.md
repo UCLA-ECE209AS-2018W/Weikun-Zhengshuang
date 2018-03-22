@@ -40,30 +40,37 @@ even targeted attacks by generating adversarial exampes to produce wrong recogni
 home devices in unwanted ways. Moustafa Alzantot[1] and Nicholas Carlini[2] have demonstrated the vulnerabilities 
 of such speech recognition models by generating adversarial examples to perform targeted attacks with high successful 
 rates. Notice in [1], the author is performing black-box attacks without knowing the details about the recognition 
-neural network whereas in [2], the attack is performed in white-box attacks leveraging the sturcture and details about the network.
+neural network whereas in [2], the attack is performed in white-box attacks leveraging the sturcture and details about the 
+network.
 However, they achieved the research-purpose attacks by deploying adversarial example files into the home assistant 
-devices, but in practical attacks, over-the-air attacks are more realistic to perform since the attackers may not have physical 
-access to the devices.  
+devices, but in practical attacks, over-the-air attacks are more realistic to perform since the attackers may not have 
+physical access to the devices.  
 
 ### Objective
 ------
 In this project, we proposed a way to generate the adversarial examples before the air channel so that 
 the attackers are able to perform over-the-air attacks based on the adversarial examples they have from [1] or [2]. 
-The main idea of our project is to mimic the air channel characteristics, the characteristics of the speaker used to play the adversarial 
-examples and the microphone on the home assistant devices listening to the commands in order to predict and construct the original adversarial examples which will result in the ones in [1],[2] after passing through the speaker-air-microphone channel. We leveraged the power of deep learning neural network to mimic the speaker-air-microphone channel to provide high accuracy and avoid the complicated analysis of speaker/microphone circuits and the acoustic air channel.
+The main idea of our project is to mimic the air channel characteristics, the characteristics of the speaker used to play 
+the adversarial examples and the microphone on the home assistant devices listening to the commands in order to predict and 
+construct the original adversarial examples which will result in the ones in [1],[2] after passing through the speaker-air-
+microphone channel. We leveraged the power of deep learning neural network to mimic the speaker-air-microphone channel to 
+provide high accuracy and avoid the complicated analysis of speaker/microphone circuits and the acoustic air channel.
 
 ## Background
 ### Speaker-Air-Microphone channel
 ------
-Since we already have some high successful rate adversarial examples, why can't we perform the attack simply by playing them through speakers?
-The answer is because the adversarial examples are carefully designed to achieve targeted attacks by manipulating bits in the audio files. Minor 
-modifications on the adversarial examples may lead to low successful rate or even failure of the attacks. Playing the adversarial example audio files with speakers will let the voice pass through a complete speaker-air-microphone channel, where each single part will change the contents in the attack voice in ways that cannot be easily anticipated. 
+Since we already have some high successful rate adversarial examples, why can't we perform the attack simply by playing them 
+through speakers? The answer is because the adversarial examples are carefully designed to achieve targeted attacks by 
+manipulating bits in the audio files. Minor modifications on the adversarial examples may lead to low successful rate or 
+even failure of the attacks. Playing the adversarial example audio files with speakers will let the voice pass through a 
+complete speaker-air-microphone channel, where each single part will change the contents in the attack voice in ways that 
+cannot be easily anticipated. 
 
 <img src="https://github.com/UCLA-ECE209AS-2018W/Weikun-Zhengshuang/raw/master/img/SAM_channel.PNG" aligen="center" width="600"/>
 
 #### Speaker
-The amplifiers in the speaker circuits will shift the DC offset and amplify the audio singals and the analog components will add noise to the 
-audio signals. Both will contribute to the changes in adversarial examples after they are played. 
+The amplifiers in the speaker circuits will shift the DC offset and amplify the audio singals and the analog components will 
+add noise to the audio signals. Both will contribute to the changes in adversarial examples after they are played. 
 #### Air channel
 The environmental surrounding noise and air vibration will further add changes to the adversarial examples.
 #### Microphone
@@ -74,18 +81,23 @@ Components in microphone circuits such as ADC and DSP filters will greatly modif
 U-Net[3] is a noval deep learning neural network structure that firstly was introduced for biomedical images processing.
 The structure consists of several levels of residual blocks for downsamling and upsampling. Minimal features extraction 
 is done through the downsampling path and background noise is added/removed through upsampling reconstruction. The residual 
-blocks are served for a fine-turning purpose during reconstruction. This network structure is proved to provide high accuracy 
-and validation loss in biomedical image processing applications of artifacts and background noise removal and super-resolution 
-applications. In [4], it is used also for audio dataset in audio super-resolution/noise removal application. We expect it to work 
-well on noise addition application as well. 
+blocks are served for a fine-turning purpose during reconstruction. This network structure is proved to provide high 
+accuracy and validation loss in biomedical image processing applications of artifacts and background noise removal and 
+super-resolution applications. 
 
 <img src="https://github.com/UCLA-ECE209AS-2018W/Weikun-Zhengshuang/raw/master/img/U-Net_bio.PNG" aligen="center" width="600" />
 
 ### Audio U-Net
 ------
-Recently, the U-Net deep neural networks have been apply to enhance the quality audio signal[7]. This deep neural networks based on the U-Net can 
+Recently, the U-Net deep neural networks have been applying to enhance the quality audio signal[7]. These deep neural 
+networks use same ideas as U-Net which can transfer inputs encoded at low sampling rates into higher-quality signals with an 
+increased resolution in the time domain. The structure of audio U-Net is as blow figure. This technique has applications in 
+telephony, compression, and text-to-speech generation and suggests new architectures for generative models of audio. In [4], 
+it is used also for the audio dataset in audio super-resolution/noise removal application. We expect it to work well on 
+noise addition application as well. 
 
-## Neural Network Structure
+<img src="https://github.com/UCLA-ECE209AS-2018W/Weikun-Zhengshuang/raw/master/img/audio_u_net.PNG" aligen="center" width="600" />
+
 
 
 
