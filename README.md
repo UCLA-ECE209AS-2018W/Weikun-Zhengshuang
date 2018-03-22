@@ -106,7 +106,11 @@ noise addition application as well.
 ## Design and Implementation
 ### Data Preparation
 ------
-The datasets we use for this project is 
+The datasets we use for this project is TED-LIUM Corpus[8]. First, since is datasets is very large, you need down it and run 
+preprocessing_audio.ipynb to extract audio into .wav format. Next, you can generate difference noise sample to train the 
+audio U-Net. The way we generate noise sample is showed in experiments setup. You free to design noise sample base on the 
+different project. We provide some example noise on [GitHub](https://github.com/UCLA-ECE209AS-2018W/Weikun-Zhengshuang/tree/master/datasets), but we cannot upload full datasets due to the limitation of upload size. 
+
 #### Experiments Setup
 <img src="https://github.com/UCLA-ECE209AS-2018W/Weikun-Zhengshuang/raw/master/img/experiment_setup.JPG" aligen="center" width="600" />
 #### Data Processing
@@ -150,3 +154,5 @@ train/valid/test separation
 [5] Wenzhe Shi, Real-Time Single Image and Video Super-Resolution Using an Efficient Sub-Pixel Convolutional Neural Network: https://arxiv.org/abs/1609.05158  
 [6] EnglishSpeechUpsampler GitHub Repo: https://github.com/jhetherly/EnglishSpeechUpsampler  
 [7] Volodymyr Kuleshov, Audio Super Resolution using Neural Networks, https://arxiv.org/pdf/1708.00853.pdf
+[8] TED-LIUM Corpus, http://www-lium.univ-lemans.fr/en/content/ted-lium-corpus
+
