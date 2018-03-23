@@ -141,18 +141,22 @@ Here, you have successfully got noise sample. Remember save same audio format as
 
 #### Create train, validation, and test datasets
 After you get the noise sample datasets, you need first trim your original and noise sample into audio clips. In this 
-project, we set the audio clips is **5s** long period. You can set any period time depending on your project. To trim the 
+project, we set the audio clips is 5s long period. You can set any period time depending on your project. To trim the 
 original and noise sample, you could directly run [preprocessing_audio_split.ipynb](https://github.com/UCLA-ECE209AS-2018W/Weikun-Zhengshuang/blob/master/preprocessing_audio_split.ipynb). 
 
 Next, you need to prepare the train, validation, and test datasets. To do that, we directly create a .csv file to record 
 each original and noise audio 5s clip file path (here, we name it as origal_noise_pairs). In this way, after we record all 
 pairs of original and noise audio, we can shuffle each pair in .csv and split into train, validation, and test datasets. To 
-save all file pairs and shuffle it, you can run [preprocessing_split_train_test.ipynb](https://github.com/UCLA-ECE209AS-2018W/Weikun-Zhengshuang/blob/master/preprocessing_split_train_test.ipynb). In the project, we use 60% for 
-training, 20% for validation, and 20% for testing. 
+save all file pairs and shuffle it, you can run [preprocessing_split_train_test.ipynb](https://github.com/UCLA-ECE209AS-2018W/Weikun-Zhengshuang/blob/master/preprocessing_split_train_test.ipynb). In the project, we use 60% for training, 20% for 
+validation, and 20% for testing. 
 
 ### Model
 ------
+Our model is basically same as the audio U-Net as [7]. But we use batch normalization instead of using dropout. Moreover, we 
+add another stacking layer to reshape tensor, and we add one more 1-dimensional convolution layer in the end. The basic 
+structure of our model is as the blow. 
 
+<img src="https://github.com/UCLA-ECE209AS-2018W/Weikun-Zhengshuang/raw/master/img/network.PNG" aligen="center" width="600" />
 
 
 
@@ -184,8 +188,7 @@ training, 20% for validation, and 20% for testing.
 [3] Olaf Ronneberger, U-Net: Convolutional Networks for Biomedical Image Segmentation: https://arxiv.org/pdf/1505.04597.pdf  
 [4] Jeffrey Hetherly, Using Deep Learning to Reconstruct High-Resolution Audio: https://blog.insightdatascience.com/using-deep-learning-to-reconstruct-high-resolution-audio-29deee8b7ccd  
 [5] Wenzhe Shi, Real-Time Single Image and Video Super-Resolution Using an Efficient Sub-Pixel Convolutional Neural Network: https://arxiv.org/abs/1609.05158  
-[6] EnglishSpeechUpsampler GitHub Repo: https://github.com/jhetherly/EnglishSpeechUpsampler  
-[7] Volodymyr Kuleshov, Audio Super Resolution using Neural Networks, https://arxiv.org/pdf/1708.00853.pdf
 
+[7] Volodymyr Kuleshov, Audio Super Resolution using Neural Networks, https://arxiv.org/pdf/1708.00853.pdf
 [8] TED-LIUM Corpus, http://www-lium.univ-lemans.fr/en/content/ted-lium-corpus
 
