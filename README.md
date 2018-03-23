@@ -207,7 +207,7 @@ noise in speaker/microphone circuits and air acoustic channel which are bottlene
 this approach does not guarantee the resulting audio still recognizable to human ears because this approach can not consider 
 the meaningfulness of the words or sentences it processes since it only focuses on circuits/physics.
 
-### Related work
+### Related Work
 ------
 Currently, some researcher presented a method to make an adversarial example attack to be a practical attack. For example, 
 CommanderSong[6] provide the novel way to generate adversarial example attacks. Moreover, they also try to build an over-
@@ -220,45 +220,52 @@ Another example,  DolphinAtack[7] is the successful over-the-air adversarial exa
 create high-frequency attack commands audible to speech recognition system but inaudible to humans. However, by adding the 
 low-pass filter, it is easy to defense this over-the-air adversarial example attack.
 
-If the project can successfully combine [2], we can generate the extramely powerful over-the-air adversarial example, and 
+If the project can successfully combine [2], we can generate the extremely powerful over-the-air adversarial example, and 
 eventually hard to defense. 
 
-### DataSet
+### Data Set and Train Approach
 ------
 In this project, we used TED-LIUM dataset for training and testing our network. The reasons as listed as followings:
-* This dataset consists of hours of TED speech recording, other dataset only have seconds-long or minutes long audio file.
+* This dataset consists of hours of TED speech recording, another dataset only has seconds-long or minutes long audio file.
 * Due to its long duration, we can simplify and shorten data processing so that we can focus more on network tuning and improving.
 * Meanwhile, it does not sacrifice its quality and it's meaningful for our network training, meaning that it is similar to our objective input data
 * Other DataSet can be considered to use as test input in future work
 
-### Loss Function
-------
-We used mean square error (MSE) as our loss function, the most fundamental loss function to calculate training loss and validation loss. The main purpose is to 
-try to minimize the bitwise difference between output data and label data, since the objective for this network is to get outputs which are as close to 
-the generated adversarial examples as possible. MSE can serve for this objective well enough. Some other popular loss functions such as L2 or gradient-related loss function 
-consider more about neighboring bits in order to achieve better loss from a larger picture. Intuitively, we do not care much about the neighboring bits since we 
-want to get optimal bitwise difference since less bitwise difference to lead to higher successful rate.  
+It is easy to overfitting if the training data set is less than 20 GB, we possible need remove some downsampling and 
+upsampling to reduce the complexity of the deep neural networks. To combined with [2], the current model will need the 
+change in the future.
 
-
-
-
+We used mean square error (MSE) as our loss function, the most fundamental loss function to calculate training loss and 
+validation loss. The main purpose is to try to minimize the bitwise difference between output data and label data since the 
+objective for this network is to get outputs which are as close to the generated adversarial examples as possible. MSE can 
+serve this objective well enough. Some other popular loss functions such as L2 or gradient-related loss function consider 
+more about neighboring bits in order to achieve better loss from a larger picture. Intuitively, we do not care much about 
+the neighboring bits since we want to get optimal bitwise difference since less bitwise difference to lead to higher success 
+rate.   
 
 ### Future Works
 ------
-In this project, we only used a portion of the TED-LIUM dataset for network training, validation and testing due to timing constraint and training time consideration.
-To improve the model, more data should be used to train the network in order to achieve better performance, bias/variance tradeoff and avoid overfitting problem.
-Other than TED-LIUM dataset, other dataset should also be considered to improve the variability of the training dataset to further improve the trained model.
+In this project, we only used a portion of the TED-LIUM dataset for network training, validation and testing due to timing 
+constraint and training time consideration. To improve the model, more data should be used to train the network in order to 
+achieve better performance, bias/variance tradeoff and avoid overfitting problem. Other than TED-LIUM dataset, another 
+dataset should also be considered to improve the variability of the training dataset to further improve the trained model.
 
-We did not have time to test whether this model is able to generate successful adversarial examples before SAM channel and we only demonstrated the the accuracy we can 
-obtain on testing dataset. Combining our work and adversarial examples generation works such as Moustafa Alzantot's work or Nicholas Carlini's work is definitely 
-the further direction of this project. Either we can keep the separated training and tune our network based on testing result or we can combine these two network and train 
-it as one model. 
+We did not have time to test whether this model is able to generate successful adversarial examples before SAM channel and 
+we only demonstrated the accuracy we can obtain on the testing dataset. Combining our work and adversarial examples 
+generation works such as Moustafa Alzantot's work or Nicholas Carlini's work is definitely the further direction of this 
+project. Either we can keep the separated training and tune our network based on testing result or we can combine this two 
+network and train it as one model. 
+
+As mention before, the audio U-Net have strong ability to remove the noise. This means it can also to be a filter to defense 
+adversarial example attack. this audio U-Net may work for filter adversarial example noise because an adversarial example 
+attack is to generate some noise which fools speech recognition system but inaudible to humans. 
 
 ## Conclusion
-Current research in the field does not provide an efficient approach for air attacks targeting home assistant devices. DolphinAttack requires very special hardware equipment 
-to generate ultrasound whereas CommanderSong generates extremely noisy results which are easily noticed. We proposed a new approach based on deep neural network to simulate the 
-speaker-air-microphone channel in order to provide ability for reverse engineering and generate adversarial examples before SAM channel which will result in successful adversarial 
-examples after passing through SAM channel. Our results achieve -------- ~~Fill in evaluation result here~~.
+Current research in the field does not provide an efficient approach for air attacks targeting home assistant devices. 
+DolphinAttack requires very special hardware equipment to generate ultrasound whereas CommanderSong generates extremely 
+noisy results which are easily noticed. We proposed a new approach based on the deep neural networks to simulate the 
+speaker-air-microphone channel in order to provide an ability for reverse engineering and generate adversarial examples 
+before SAM channel which will result in successful adversarial examples after passing through SAM channel. 
 
 ## References
 [1] Moustafa Alzantot, Did you hear that? Adversarial Examples Against Automatic Speech Recognition: https://arxiv.org/abs/1801.00554                                                 
