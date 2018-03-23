@@ -92,7 +92,7 @@ super-resolution applications.
 
 ### Audio U-Net
 ------
-Recently, the U-Net deep neural networks have been applying to enhance the quality audio signal[7]. These deep neural 
+Recently, the U-Net deep neural networks have been applying to enhance the quality audio signal[8]. These deep neural 
 networks use same ideas as U-Net which can transfer inputs encoded at low sampling rates into higher-quality signals with an 
 increased resolution in the time domain. The structure of audio U-Net is as blow figure. This technique has applications in 
 telephony, compression, and text-to-speech generation and suggests new architectures for generative models of audio. In [4], 
@@ -104,7 +104,7 @@ noise addition application as well.
 ## Design and Implementation
 ### Data Preparation
 ------
-The datasets we use for this project is TED-LIUM Corpus[8]. First, since is datasets is very large, you need down it and run 
+The datasets we use for this project is TED-LIUM Corpus[9]. First, since is datasets is very large, you need down it and run 
 [preprocessing_audio.ipynb](https://github.com/UCLA-ECE209AS-2018W/Weikun-Zhengshuang/blob/master/preprocessing_audio.ipynb) 
 to extract audio into .wav format. Next, you can generate difference noise sample to train the 
 audio U-Net. The way we generate noise sample is showed in experiments setup and data processing. You free to design noise 
@@ -152,7 +152,7 @@ validation, and 20% for testing.
 
 ### Model
 ------
-Our model is basically same as the audio U-Net as [7]. The total downsampling cell is 8 in our DNNs, and we use 8 upsampling 
+Our model is basically same as the audio U-Net as [8]. The total downsampling cell is 8 in our DNNs, and we use 8 upsampling 
 cell as well. Furthermore, we use batch normalization instead of using dropout. Moreover, we add another stacking layer and 
 one more 1-dimensional convolution layer at the end of DNNs, which can get better performance. The basic structure of our 
 model is as shown as the blow. 
@@ -174,9 +174,17 @@ The method we used to evaluate our result does not base on the means square erro
 
 <img src="https://github.com/UCLA-ECE209AS-2018W/Weikun-Zhengshuang/blob/master/output/plotting/test_0.png" aligen="center" width="600" />
 
+<img src="https://github.com/UCLA-ECE209AS-2018W/Weikun-Zhengshuang/blob/master/output/plotting/test_50.png" aligen="center" width="600" />
+
+<img src="https://github.com/UCLA-ECE209AS-2018W/Weikun-Zhengshuang/blob/master/output/plotting/test_100.png" aligen="center" width="600" />
+
+The recovery audio and noise audio both have lower LSD values. This indicates that the recovery audio and noise audio match the original frequency very well. It is easy to understand that audio transmit over-the-air will not change too much for the frequency content. Also, the lower LSD values represent our model can restore frequency currently. 
+
+However, for this project, our goal is to eliminate noise. This means the SNR can play more important place in the evaluation work. As mention before, the higher SNR have the better result for our project. Base on the results above, our model did a great job.
+
+In the end, we also upload some sample recovery output .wav file on [GitHub](https://github.com/UCLA-ECE209AS-2018W/Weikun-Zhengshuang/tree/master/output/wav). Please download the listen to it. (If you cannot play .wav on above link, you can download the whole repository and make sure you have the music player which can play the .wav file)
 
 ## Discussion
-
 ### Conventional Approach
 The most conventional and straightforward approach for this problem would be to use the combination of Digital Signal Processing(DSP), Circuit Analysis and Physics 
 to build a model to anticipate the changes that would happen to the adversarial examples so that proper manipulation can be made in order to do reverse-engineering. 
