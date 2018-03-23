@@ -162,7 +162,10 @@ model is as shown as the blow.
 The bottom figure shows that details in each downsampling and upsampling cell. As mentioned before, we use batch 
 normalization instead of using dropout, because batch normalization has better performance. The bottleneck cell and 
 downsample cell have the same structure, and meaning of bottleneck cell is same as stacking layer plus 1-dimensional 
-convolution layer at the end of whole DNNs. 
+convolution layer at the end of whole DNNs. [5] demonstrated a novel method to generate super-resolution image. They call it 
+as subpixel shuffle layer (some people called dimensional shuffle layer). This layer makes zero padding for each pixel of 
+the image, which can generate high resolution as the result. The audio U-Net use this subpixel shuffle layer to generate 
+high sampling rate result. 
 
 <img src="https://github.com/UCLA-ECE209AS-2018W/Weikun-Zhengshuang/raw/master/img/network2.PNG" aligen="center" width="600" />
 
@@ -171,6 +174,8 @@ convolution layer at the end of whole DNNs.
 
 
 ## Discussion
+
+### Related work
 ------
 
 
@@ -178,8 +183,8 @@ convolution layer at the end of whole DNNs.
 ------
 
 
-## Related Works
-------
+## Conclution
+
 
 
 
@@ -191,7 +196,7 @@ convolution layer at the end of whole DNNs.
 [3] Olaf Ronneberger, U-Net: Convolutional Networks for Biomedical Image Segmentation: https://arxiv.org/pdf/1505.04597.pdf  
 [4] Jeffrey Hetherly, Using Deep Learning to Reconstruct High-Resolution Audio: https://blog.insightdatascience.com/using-deep-learning-to-reconstruct-high-resolution-audio-29deee8b7ccd  
 [5] Wenzhe Shi, Real-Time Single Image and Video Super-Resolution Using an Efficient Sub-Pixel Convolutional Neural Network: https://arxiv.org/abs/1609.05158  
-
-[7] Volodymyr Kuleshov, Audio Super Resolution using Neural Networks, https://arxiv.org/pdf/1708.00853.pdf
+[6]
+[7] Volodymyr Kuleshov, Audio Super Resolution using Neural Networks, https://arxiv.org/pdf/1708.00853.pdf   
 [8] TED-LIUM Corpus, http://www-lium.univ-lemans.fr/en/content/ted-lium-corpus
 
