@@ -172,17 +172,23 @@ high sampling rate result.
 ## Evaluation
 The method we used to evaluate our result does not base on the means square errors (MSE).For our project is eliminate noise, the MSE between noise sample and original is tiny. Therefore, MSE cannot explain very well for the output result. we use two voice quality evaluation methods: log-spectral distance(LSD) and signal-to-noise ratio (SNR). The LSD is a distance measure (expressed in dB) between two spectra, and it usually to calculate the average of spectral distortion over a large number of frames. The lower LSD values indicate matching frequency content. The SNR is a measure used in science and engineering that compares the level of the desired signal to the level of background noise. The lower SNR value implies that the audio may not be as clear-sounding. 
 
-<img src="https://github.com/UCLA-ECE209AS-2018W/Weikun-Zhengshuang/blob/master/output/plotting/test_0.png" aligen="center" width="600" />
+<img src="https://github.com/UCLA-ECE209AS-2018W/Weikun-Zhengshuang/raw/master/img/test_0.png" aligen="center" width="600" />
 
-<img src="https://github.com/UCLA-ECE209AS-2018W/Weikun-Zhengshuang/blob/master/output/plotting/test_50.png" aligen="center" width="600" />
+<img src="https://github.com/UCLA-ECE209AS-2018W/Weikun-Zhengshuang/raw/master/img/test_50.png" aligen="center" width="600" />
 
-<img src="https://github.com/UCLA-ECE209AS-2018W/Weikun-Zhengshuang/blob/master/output/plotting/test_100.png" aligen="center" width="600" />
+<img src="https://github.com/UCLA-ECE209AS-2018W/Weikun-Zhengshuang/raw/master/img/test_100.png" aligen="center" width="600" />
 
-The recovery audio and noise audio both have lower LSD values. This indicates that the recovery audio and noise audio match the original frequency very well. It is easy to understand that audio transmit over-the-air will not change too much for the frequency content. Also, the lower LSD values for recovery audio represent our model can restore frequency currently well, which already discussed in [9]. 
+The recovery audio and noise audio both have lower LSD values. This indicates that the recovery audio and noise audio match 
+the original frequency very well. It is easy to understand that audio transmit over-the-air will not change too much for the 
+frequency content. Also, the lower LSD values for recovery audio represent our model can restore frequency currently well, 
+which already discussed in [9]. 
 
-However, for this project, our goal is to eliminate noise. This means the SNR can play more important place in the evaluation work. As mention before, the higher SNR have the better result for our project. Base on the results above, our model did a great job.
+However, for this project, our goal is to eliminate noise. This means the SNR can play more important place in the 
+evaluation work. As mention before, the higher SNR have the better result for our project. Base on the results above, our 
+model did a great job.
 
-In the end, we also upload some sample recovery output .wav file on [GitHub](https://github.com/UCLA-ECE209AS-2018W/Weikun-Zhengshuang/tree/master/output/wav). Please download the listen to it. (If you cannot play .wav on above link, you can download the whole repository and make sure you have the music player which can play the .wav file)
+In the end, we also upload some sample recovery output .wav file on [GitHub](https://github.com/UCLA-ECE209AS-2018W/Weikun-Zhengshuang/tree/master/output/wav). Please download the listen to it. (If you cannot play .wav on above link, you can 
+download the whole repository and make sure you have the music player which can play the .wav file)
 
 ## Discussion
 ### Conventional Approach
