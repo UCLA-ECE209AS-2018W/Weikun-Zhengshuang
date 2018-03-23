@@ -175,28 +175,68 @@ The mehod we used to evaluate our result do not base on the means square errors 
 
 ## Discussion
 
-### Related work
-------
+### Conventional Approach
+The most conventional and straightforward approach for this problem would be to use the combination of Digital Signal Processing(DSP), Circuit Analysis and Physics 
+to build a model to anticipate the changes that would happen to the adversarial examples so that proper manipulation can be made in order to do reverse-engineering. 
+However, this approach requires very intense knowledge in all three domains and introduce much high complexity. Moreover, there are uncontrollable noise in speaker/mircrophone 
+circuits and air acoustic channel which are bottlenecks to improve the accuracy. Additionally, this approach does not guarantee the resulting audio still recognizable to human ears 
+because this approach can not consider the meaningfulness of the words or sentences it processes since it only focuses on circuits/physics.
+
+### DataSet
+In this project, we used TED-LIUM dataset for training and testing our network. The reasons as listed as followings:
+* This dataset consists of hours of TED speech recording, other dataset only have seconds-long or minutes long audio file.
+* Due to its long duration, we can simplify and shorten data processing so that we can focuse more on network tuning and improving.
+* Meanwhile, it does not sacrifice its quality and it's meaningful for our network training, meaning that it is simliar to our objective input data
+* Other DataSet can be considered to use as test input in future work
+
+### Loss Function
+We used mean sqaure error (MSE) as our loss function, the most fundamental loss function to calculate training loss and validation loss. The main purpose is to 
+try to minimize the bit-wise difference between output data and label data, since the objective for this network is to get outputs which are as close to 
+the generated adversarial examples as possible. MSE can serve for this objective well enough. Some other popular loss functions such as L2 or gradient-related loss function 
+consider more about neighboring bits in order to achieve better loss from a larger picture. Intuitively, we do not care much about the beighboring bits since we 
+want to get optimal bit-wise difference since less bit-wise difference to lead to higher successful rate.  
+
+
+## Related work
+
+CommanderSong[6]
+Yuan et al. brings up this idea to 
+
+Very noisy 
+
+DolphinAtack[7]
 
 
 ## Future Works
-------
 
+In this project, we only used a portion of the TED-LIUM dataset for network training, validating and testing due to timing constraint and training time consideration.
+To improve the model, more data should be used to train the network in order to achieve better performance, bias/variance tradeoff and avoid overfitting problem.
+Other than TED-LIUM dataset, other dataset should also be considered to improve the variablity of the training dataset to further improve the trained model.
+
+We did not have time to test whether this model is able to generate successful adversarial examples before SAM channel and we only demonstrated the the accuracy we can 
+obtain on testing dataset. Combining our work and adversarial examples generation works such as Moustafa Alzantot's work or Nicholas Carlini's work is definitely 
+the further direction of this project. Either we can keep the separated training and tune our network based on testing result or we can combine these two network and train 
+it as one model. 
 
 ## Conclution
 
-
-
-
-
+Current research in the field does not provide an efficient approach for air attacks targeting home assistant devices. DolphinAttack requires very special hardware equipment 
+to generate ultrasound whereas CommanderSong generates extremely noisy results which are easily noticed. We proposed a new approach based on deep neural network to simulate the 
+speaker-air-microphone channel in order to provide ability for reverse engineering and generate adversarial examples before SAM channel which will result in successful adversarial 
+examples after passing through SAM channel. Our results achieve -------- ~~Fill in evaluation result here~~.
 
 ## References
+
 [1] Moustafa Alzantot, Did you hear that? Adversarial Examples Against Automatic Speech Recognition: https://arxiv.org/pdf/1801.00554.pdf  
 [2] Nicholas Carlini, Audio Adversarial Examples: Targeted Attacks on Speech-to-Text: https://arxiv.org/pdf/1801.01944.pdf  
 [3] Olaf Ronneberger, U-Net: Convolutional Networks for Biomedical Image Segmentation: https://arxiv.org/pdf/1505.04597.pdf  
 [4] Jeffrey Hetherly, Using Deep Learning to Reconstruct High-Resolution Audio: https://blog.insightdatascience.com/using-deep-learning-to-reconstruct-high-resolution-audio-29deee8b7ccd  
 [5] Wenzhe Shi, Real-Time Single Image and Video Super-Resolution Using an Efficient Sub-Pixel Convolutional Neural Network: https://arxiv.org/abs/1609.05158  
-[6]
-[7] Volodymyr Kuleshov, Audio Super Resolution using Neural Networks, https://arxiv.org/pdf/1708.00853.pdf   
-[8] TED-LIUM Corpus, http://www-lium.univ-lemans.fr/en/content/ted-lium-corpus
+
+[6] Xuejing Yuan, CommanderSong: A Systematic Approach for Practical Adversarial Voice Recognition: https://arxiv.org/abs/1801.08535
+[7] Guoming Zhang, DolphinAtack: Inaudible Voice Commands: https://arxiv.org/abs/1708.09537
+
+
+[8] Volodymyr Kuleshov, Audio Super Resolution using Neural Networks, https://arxiv.org/pdf/1708.00853.pdf   
+[9] TED-LIUM Corpus, http://www-lium.univ-lemans.fr/en/content/ted-lium-corpus
 
