@@ -170,7 +170,9 @@ high sampling rate result.
 <img src="https://github.com/UCLA-ECE209AS-2018W/Weikun-Zhengshuang/raw/master/img/network2.jpg" aligen="center" width="600" />
 
 ## Evaluation
-The mehod we used to evaluate our result do not base on the means square errors (MSE).For our project is eliminate noise, the MSE between noise sample and original is tiny. Therefore, we use some 
+The method we used to evaluate our result does not base on the means square errors (MSE).For our project is eliminate noise, the MSE between noise sample and original is tiny. Therefore, MSE cannot explain very well for the output result. we use two voice quality evaluation methods: log-spectral distance(LSD) and signal-to-noise ratio (SNR). The LSD is a distance measure (expressed in dB) between two spectra, and it usually to calculate the average of spectral distortion over a large number of frames. The lower LSD values indicate matching frequency content. The SNR is a measure used in science and engineering that compares the level of the desired signal to the level of background noise. The lower SNR value implies that the audio may not be as clear-sounding. 
+
+<img src="https://github.com/UCLA-ECE209AS-2018W/Weikun-Zhengshuang/blob/master/output/plotting/test_0.png" aligen="center" width="600" />
 
 
 ## Discussion
