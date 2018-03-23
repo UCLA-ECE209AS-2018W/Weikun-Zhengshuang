@@ -152,16 +152,19 @@ validation, and 20% for testing.
 
 ### Model
 ------
-Our model is basically same as the audio U-Net as [7]. But we use batch normalization instead of using dropout. Moreover, we 
-add another stacking layer to reshape tensor, and we add one more 1-dimensional convolution layer in the end. The basic 
-structure of our model is as the blow. 
+Our model is basically same as the audio U-Net as [7]. The total downsampling cell is 8 in our DNNs, and we use 8 upsampling 
+cell as well. Furthermore, we use batch normalization instead of using dropout. Moreover, we add another stacking layer and 
+one more 1-dimensional convolution layer at the end of DNNs, which can get better performance. The basic structure of our 
+model is as shown as the blow. 
 
 <img src="https://github.com/UCLA-ECE209AS-2018W/Weikun-Zhengshuang/raw/master/img/network.PNG" aligen="center" width="600" />
 
+The bottom figure shows that details in each downsampling and upsampling cell. As mentioned before, we use batch 
+normalization instead of using dropout, because batch normalization has better performance. The bottleneck cell and 
+downsample cell have the same structure, and meaning of bottleneck cell is same as stacking layer plus 1-dimensional 
+convolution layer at the end of whole DNNs. 
 
-
-
-
+<img src="https://github.com/UCLA-ECE209AS-2018W/Weikun-Zhengshuang/raw/master/img/network2.PNG" aligen="center" width="600" />
 
 ## Evaluation
 ------
