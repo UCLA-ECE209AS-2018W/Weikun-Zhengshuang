@@ -170,7 +170,7 @@ high sampling rate result.
 <img src="https://github.com/UCLA-ECE209AS-2018W/Weikun-Zhengshuang/raw/master/img/network2.PNG" aligen="center" width="600" />
 
 ## Evaluation
-------
+The mehod we used to evaluate our result do not base on the means square errors (MSE).For our project is eliminate noise, the MSE between noise sample and original is tiny. Therefore, we use some 
 
 
 ## Discussion
