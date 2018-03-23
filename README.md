@@ -178,7 +178,7 @@ The method we used to evaluate our result does not base on the means square erro
 
 <img src="https://github.com/UCLA-ECE209AS-2018W/Weikun-Zhengshuang/blob/master/output/plotting/test_100.png" aligen="center" width="600" />
 
-The recovery audio and noise audio both have lower LSD values. This indicates that the recovery audio and noise audio match the original frequency very well. It is easy to understand that audio transmit over-the-air will not change too much for the frequency content. Also, the lower LSD values represent our model can restore frequency currently. 
+The recovery audio and noise audio both have lower LSD values. This indicates that the recovery audio and noise audio match the original frequency very well. It is easy to understand that audio transmit over-the-air will not change too much for the frequency content. Also, the lower LSD values for recovery audio represent our model can restore frequency currently well, which already discussed in [9]. 
 
 However, for this project, our goal is to eliminate noise. This means the SNR can play more important place in the evaluation work. As mention before, the higher SNR have the better result for our project. Base on the results above, our model did a great job.
 
