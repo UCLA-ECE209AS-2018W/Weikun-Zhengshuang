@@ -1,4 +1,4 @@
-# Over-the-Air Speech Recogniztion Attack
+# Over-the-Air Speech Recognition Attack
 
 ## About This Project
 ### Overview
@@ -27,23 +27,23 @@ are given for reference):
 * Sox 1.2.7 (only for preprocessing datasets)
 
 ## Introduction
-Recent progress in intelligent home assitant devices such as Google Home and Amazon Alexa
+Recent progress in intelligent home assistant devices such as Google Home and Amazon Alexa
 is changing people's daily lives and allows users to interact with their home 
 devices in a smarter and more convenient. Such devices are integrated with speech recognition 
-models mostly based on Deep Learning Neural Networks to recoginize users' voice commands. 
-The advantage of using Deep Learning Models is their higher accuracy on recoginizing users' commands 
+models mostly based on Deep Learning Neural Networks to recognize users' voice commands. 
+The advantage of using Deep Learning Models is their higher accuracy on recognizing users' commands 
 correctly than traditional machine learning algorithms. However, such devices bring new security concerns 
-since they are operating users' private home devices and transimitting sensitive data and information about users'
+since they are operating users' private home devices and transmitting sensitive data and information about users'
 private personal lives. Vulnerabilities of these devices may be exploited and used to cause users' property loss. 
 
 ### Problem Statement
 ------
 Recent research has shown that deep learning models are easy to be fooled by attackers to perform untargeted or 
-even targeted attacks by generating adversarial exampes to produce wrong recognized commands and to actuate users' 
+even targeted attacks by generating adversarial examples to produce wrong recognized commands and to actuate users' 
 home devices in unwanted ways. Moustafa Alzantot[1] and Nicholas Carlini[2] have demonstrated the vulnerabilities 
 of such speech recognition models by generating adversarial examples to perform targeted attacks with high successful 
 rates. Notice in [1], the author is performing black-box attacks without knowing the details about the recognition 
-neural network whereas in [2], the attack is performed in white-box attacks leveraging the sturcture and details about the 
+neural network whereas in [2], the attack is performed in white-box attacks leveraging the structure and details about the 
 network.
 However, they achieved the research-purpose attacks by deploying adversarial example files into the home assistant 
 devices, but in practical attacks, over-the-air attacks are more realistic to perform since the attackers may not have 
@@ -72,17 +72,17 @@ cannot be easily anticipated.
 <img src="https://github.com/UCLA-ECE209AS-2018W/Weikun-Zhengshuang/raw/master/img/SAM_channel.PNG" aligen="center" width="600"/>
 
 #### Speaker
-The amplifiers in the speaker circuits will shift the DC offset and amplify the audio singals and the analog components will 
+The amplifiers in the speaker circuits will shift the DC offset and amplify the audio signals and the analog components will 
 add noise to the audio signals. Both will contribute to the changes in adversarial examples after they are played. 
 #### Air channel
 The environmental surrounding noise and air vibration will further add changes to the adversarial examples.
 #### Microphone
-Components in microphone circuits such as ADC and DSP filters will greatly modify the adersarial examples as well. 
+Components in microphone circuits such as ADC and DSP filters will greatly modify the adversarial examples as well. 
 
 ### U-Net
 ------
-U-Net[3] is a noval deep learning neural network structure that firstly was introduced for biomedical images processing.
-The structure consists of several levels of residual blocks for downsamling and upsampling. Minimal features extraction 
+U-Net[3] is a novel deep learning neural network structure that firstly was introduced for biomedical images processing.
+The structure consists of several levels of residual blocks for downsampling and upsampling. Minimal features extraction 
 is done through the downsampling path and background noise is added/removed through upsampling reconstruction. The residual 
 blocks are served for a fine-turning purpose during reconstruction. This network structure is proved to provide high 
 accuracy and validation loss in biomedical image processing applications of artifacts and background noise removal and 
@@ -178,23 +178,23 @@ The mehod we used to evaluate our result do not base on the means square errors 
 ### Conventional Approach
 The most conventional and straightforward approach for this problem would be to use the combination of Digital Signal Processing(DSP), Circuit Analysis and Physics 
 to build a model to anticipate the changes that would happen to the adversarial examples so that proper manipulation can be made in order to do reverse-engineering. 
-However, this approach requires very intense knowledge in all three domains and introduce much high complexity. Moreover, there are uncontrollable noise in speaker/mircrophone 
+However, this approach requires very intense knowledge in all three domains and introduce much high complexity. Moreover, there are uncontrollable noise in speaker/microphone 
 circuits and air acoustic channel which are bottlenecks to improve the accuracy. Additionally, this approach does not guarantee the resulting audio still recognizable to human ears 
 because this approach can not consider the meaningfulness of the words or sentences it processes since it only focuses on circuits/physics.
 
 ### DataSet
 In this project, we used TED-LIUM dataset for training and testing our network. The reasons as listed as followings:
 * This dataset consists of hours of TED speech recording, other dataset only have seconds-long or minutes long audio file.
-* Due to its long duration, we can simplify and shorten data processing so that we can focuse more on network tuning and improving.
-* Meanwhile, it does not sacrifice its quality and it's meaningful for our network training, meaning that it is simliar to our objective input data
+* Due to its long duration, we can simplify and shorten data processing so that we can focus more on network tuning and improving.
+* Meanwhile, it does not sacrifice its quality and it's meaningful for our network training, meaning that it is similar to our objective input data
 * Other DataSet can be considered to use as test input in future work
 
 ### Loss Function
-We used mean sqaure error (MSE) as our loss function, the most fundamental loss function to calculate training loss and validation loss. The main purpose is to 
-try to minimize the bit-wise difference between output data and label data, since the objective for this network is to get outputs which are as close to 
+We used mean square error (MSE) as our loss function, the most fundamental loss function to calculate training loss and validation loss. The main purpose is to 
+try to minimize the bitwise difference between output data and label data, since the objective for this network is to get outputs which are as close to 
 the generated adversarial examples as possible. MSE can serve for this objective well enough. Some other popular loss functions such as L2 or gradient-related loss function 
-consider more about neighboring bits in order to achieve better loss from a larger picture. Intuitively, we do not care much about the beighboring bits since we 
-want to get optimal bit-wise difference since less bit-wise difference to lead to higher successful rate.  
+consider more about neighboring bits in order to achieve better loss from a larger picture. Intuitively, we do not care much about the neighboring bits since we 
+want to get optimal bitwise difference since less bitwise difference to lead to higher successful rate.  
 
 
 ## Related work
@@ -209,16 +209,16 @@ DolphinAtack[7]
 
 ## Future Works
 
-In this project, we only used a portion of the TED-LIUM dataset for network training, validating and testing due to timing constraint and training time consideration.
+In this project, we only used a portion of the TED-LIUM dataset for network training, validation and testing due to timing constraint and training time consideration.
 To improve the model, more data should be used to train the network in order to achieve better performance, bias/variance tradeoff and avoid overfitting problem.
-Other than TED-LIUM dataset, other dataset should also be considered to improve the variablity of the training dataset to further improve the trained model.
+Other than TED-LIUM dataset, other dataset should also be considered to improve the variability of the training dataset to further improve the trained model.
 
 We did not have time to test whether this model is able to generate successful adversarial examples before SAM channel and we only demonstrated the the accuracy we can 
 obtain on testing dataset. Combining our work and adversarial examples generation works such as Moustafa Alzantot's work or Nicholas Carlini's work is definitely 
 the further direction of this project. Either we can keep the separated training and tune our network based on testing result or we can combine these two network and train 
 it as one model. 
 
-## Conclution
+## Conclusion
 
 Current research in the field does not provide an efficient approach for air attacks targeting home assistant devices. DolphinAttack requires very special hardware equipment 
 to generate ultrasound whereas CommanderSong generates extremely noisy results which are easily noticed. We proposed a new approach based on deep neural network to simulate the 
