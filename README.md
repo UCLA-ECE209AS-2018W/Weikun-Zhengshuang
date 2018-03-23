@@ -110,7 +110,7 @@ audio U-Net. The way we generate noise sample is showed in experiments setup and
 sample base on the different project purpose. We provide some example noise on [GitHub](https://github.com/UCLA-ECE209AS-2018W/Weikun-Zhengshuang/tree/master/datasets), but we cannot upload full datasets due to the limitation of upload size. 
 
 #### Experiments Setup
-The blow figure shows the environment of noise sample generation. To  generate noise is the sample, out settings of this 
+The blow figure shows the environment of noise sample generation. To  generate noise is the sample, our settings of this 
 experiment is:
 * software media player: Groove Music (Window 10), volume setting 4/100
 * speaker: SoundLink Mini II (Bose), volume setting 100/100
@@ -121,7 +121,7 @@ experiment is:
 
 <img src="https://github.com/UCLA-ECE209AS-2018W/Weikun-Zhengshuang/raw/master/img/record_setup.png" aligen="center" width="600" />
 
-#### Data Processing
+#### Data Preprocessing
 After recording the noise sample, you also need the use professor audio editor to remove the audio offset. Here, we use Audacity to do it. The audio most off before removing is showed as the blow.
 
 <img src="https://github.com/UCLA-ECE209AS-2018W/Weikun-Zhengshuang/raw/master/img/processing_recorded_audio_1.PNG" aligen="center" width="600" />
@@ -136,6 +136,17 @@ Here, you have successfully got noise sample. Remember save same audio format as
 <img src="https://github.com/UCLA-ECE209AS-2018W/Weikun-Zhengshuang/raw/master/img/processing_recorded_audio_3.PNG" aligen="center" width="600" />
 
 <img src="https://github.com/UCLA-ECE209AS-2018W/Weikun-Zhengshuang/raw/master/img/processing_recorded_audio_4.PNG" aligen="center" width="600" />
+
+#### Create train, validation, and test datasets
+After you get the noise sample datasets, you need first trim your original and noise sample into audio clips. In this 
+project, we set the audio clips is 5s long period. You can set any period time depending on your project. To trim the 
+original and noise sample, you could directly run preprocessing_audio_split.ipynb. 
+
+Next, you need to prepare the train, validation, and test datasets. To do that, we directly create a .csv file to record 
+each original and noise audio 5s clip file path (here, we name it as origal_noise_pairs). In this way, after we record all 
+pairs of original and noise audio, we can shuffle each pair in .csv and split into train, validation, and test datasets. To 
+save all file pairs and shuffle it, you can run preprocessing_split_train_test.ipynb. In the project, we use 60% for 
+training, 20% for validation, and 20% for testing. 
 
 ### Network training and testing
 ------
