@@ -1,11 +1,10 @@
 # Over-the-Air Speech Recognition Attack
 
-## About This Project
-### Overview
-------
+## Overview
 The course final project for UCLA EE209AS Winter 2018 - Special Topics in Circuits and Embedded Systems: 
 Security and Privacy for Embedded Systems, Cyber-Physical Systems, and the Internet of Things by Professor. Mani Srivastava.
-In this project, we use deep learning (audio U-Net) to build model remove electronic noise and air noise during adversarial example transmission over the air. The contribution of this project are:
+In this project, we use deep learning (audio U-Net) to build model remove electronic noise and air noise during adversarial 
+example transmission over the air. The contribution of this project are:
 * make the adversarial example attack can transmit over-the-air, which eventually be a practical attack.
 * found audio U-Net is also a possible defense for adversarial example attack due to strong ability to remove noise.
 
@@ -187,18 +186,45 @@ However, for this project, our goal is to eliminate noise. This means the SNR ca
 evaluation work. As mention before, the higher SNR have the better result for our project. Base on the results above, our 
 model did a great job.
 
-In the end, we also upload some sample recovery output .wav file on [GitHub](https://github.com/UCLA-ECE209AS-2018W/Weikun-Zhengshuang/tree/master/output/wav). Please download the listen to it. (If you cannot play .wav on above link, you can 
+we also upload some sample recovery output .wav file on [GitHub](https://github.com/UCLA-ECE209AS-2018W/Weikun-Zhengshuang/tree/master/output/wav). Please download the listen to it. (If you cannot play .wav on above link, you can 
 download the whole repository and make sure you have the music player which can play the .wav file)
 
 ## Discussion
+The goal of this project is to combine [2], which make the adversarial example attack can transmit over-the-air. However, 
+based on results from evaluation part. we can only conclude audio U-Net have strong ability to remove noise and restore the 
+original audio. It is hard to predict the result after combining [2]. To make a successful real practical attack, we may 
+need change some structure for current audio U-Net. And current audio U-Net only considers particular noise environment, it 
+is hard to say the result in another noise environment. We may need to collect more noise sample from different noise 
+environment to build the more powerful model.
+
 ### Conventional Approach
-The most conventional and straightforward approach for this problem would be to use the combination of Digital Signal Processing(DSP), Circuit Analysis and Physics 
-to build a model to anticipate the changes that would happen to the adversarial examples so that proper manipulation can be made in order to do reverse-engineering. 
-However, this approach requires very intense knowledge in all three domains and introduce much high complexity. Moreover, there are uncontrollable noise in speaker/microphone 
-circuits and air acoustic channel which are bottlenecks to improve the accuracy. Additionally, this approach does not guarantee the resulting audio still recognizable to human ears 
-because this approach can not consider the meaningfulness of the words or sentences it processes since it only focuses on circuits/physics.
+------
+The most conventional and straightforward approach for this problem would be to use the combination of Digital Signal 
+Processing(DSP), Circuit Analysis and Physics to build a model to anticipate the changes that would happen to the 
+adversarial examples so that proper manipulation can be made in order to do reverse-engineering. However, this approach 
+requires very intense knowledge in all three domains and introduce much high complexity. Moreover, there is uncontrollable 
+noise in speaker/microphone circuits and air acoustic channel which are bottlenecks to improve the accuracy. Additionally, 
+this approach does not guarantee the resulting audio still recognizable to human ears because this approach can not consider 
+the meaningfulness of the words or sentences it processes since it only focuses on circuits/physics.
+
+### Related work
+------
+Currently, some researcher presented a method to make an adversarial example attack to be a practical attack. For example, 
+CommanderSong[6] provide the novel way to generate adversarial example attacks. Moreover, they also try to build an over-
+the-air adversarial example by combining noise factor into loss function. However, they use statistic machine learning to 
+generate adversarial example can only apply to some special case. For the complex end-to-end deep learning speech 
+recognizing system, CommanderSong will not work. Furthermore, the over-the-air adversarial example they provide have very 
+low performance and have lots of noise. 
+
+Another example,  DolphinAtack[7] is the successful over-the-air adversarial example attack. It exploits microphones to 
+create high-frequency attack commands audible to speech recognition system but inaudible to humans. However, by adding the 
+low-pass filter, it is easy to defense this over-the-air adversarial example attack.
+
+If the project can successfully combine [2], we can generate the extramely powerful over-the-air adversarial example, and 
+eventually hard to defense. 
 
 ### DataSet
+------
 In this project, we used TED-LIUM dataset for training and testing our network. The reasons as listed as followings:
 * This dataset consists of hours of TED speech recording, other dataset only have seconds-long or minutes long audio file.
 * Due to its long duration, we can simplify and shorten data processing so that we can focus more on network tuning and improving.
@@ -206,6 +232,7 @@ In this project, we used TED-LIUM dataset for training and testing our network. 
 * Other DataSet can be considered to use as test input in future work
 
 ### Loss Function
+------
 We used mean square error (MSE) as our loss function, the most fundamental loss function to calculate training loss and validation loss. The main purpose is to 
 try to minimize the bitwise difference between output data and label data, since the objective for this network is to get outputs which are as close to 
 the generated adversarial examples as possible. MSE can serve for this objective well enough. Some other popular loss functions such as L2 or gradient-related loss function 
@@ -213,18 +240,11 @@ consider more about neighboring bits in order to achieve better loss from a larg
 want to get optimal bitwise difference since less bitwise difference to lead to higher successful rate.  
 
 
-## Related work
-
-CommanderSong[6]
-Yuan et al. brings up this idea to 
-
-Very noisy 
-
-DolphinAtack[7]
 
 
-## Future Works
 
+### Future Works
+------
 In this project, we only used a portion of the TED-LIUM dataset for network training, validation and testing due to timing constraint and training time consideration.
 To improve the model, more data should be used to train the network in order to achieve better performance, bias/variance tradeoff and avoid overfitting problem.
 Other than TED-LIUM dataset, other dataset should also be considered to improve the variability of the training dataset to further improve the trained model.
@@ -235,14 +255,12 @@ the further direction of this project. Either we can keep the separated training
 it as one model. 
 
 ## Conclusion
-
 Current research in the field does not provide an efficient approach for air attacks targeting home assistant devices. DolphinAttack requires very special hardware equipment 
 to generate ultrasound whereas CommanderSong generates extremely noisy results which are easily noticed. We proposed a new approach based on deep neural network to simulate the 
 speaker-air-microphone channel in order to provide ability for reverse engineering and generate adversarial examples before SAM channel which will result in successful adversarial 
 examples after passing through SAM channel. Our results achieve -------- ~~Fill in evaluation result here~~.
 
 ## References
-
 [1] Moustafa Alzantot, Did you hear that? Adversarial Examples Against Automatic Speech Recognition: https://arxiv.org/abs/1801.00554                                                 
 [2] Nicholas Carlini, Audio Adversarial Examples: Targeted Attacks on Speech-to-Text: https://arxiv.org/abs/1801.01944   
 [3] Olaf Ronneberger, U-Net: Convolutional Networks for Biomedical Image Segmentation: https://arxiv.org/abs/1505.04597  
