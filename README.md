@@ -157,7 +157,7 @@ cell as well. Furthermore, we use batch normalization instead of using dropout. 
 one more 1-dimensional convolution layer at the end of DNNs, which can get better performance. The basic structure of our 
 model is as shown as the blow. 
 
-<img src="https://github.com/UCLA-ECE209AS-2018W/Weikun-Zhengshuang/raw/master/img/network.PNG" aligen="center" width="600" />
+<img src="https://github.com/UCLA-ECE209AS-2018W/Weikun-Zhengshuang/raw/master/img/network.jpg" aligen="center" width="600" />
 
 The bottom figure shows that details in each downsampling and upsampling cell. As mentioned before, we use batch 
 normalization instead of using dropout, because batch normalization has better performance. The bottleneck cell and 
@@ -167,7 +167,7 @@ as subpixel shuffle layer (some people called dimensional shuffle layer). This l
 the image, which can generate high resolution as the result. The audio U-Net use this subpixel shuffle layer to generate 
 high sampling rate result. 
 
-<img src="https://github.com/UCLA-ECE209AS-2018W/Weikun-Zhengshuang/raw/master/img/network2.PNG" aligen="center" width="600" />
+<img src="https://github.com/UCLA-ECE209AS-2018W/Weikun-Zhengshuang/raw/master/img/network2.jpg" aligen="center" width="600" />
 
 ## Evaluation
 The mehod we used to evaluate our result do not base on the means square errors (MSE).For our project is eliminate noise, the MSE between noise sample and original is tiny. Therefore, we use some 
